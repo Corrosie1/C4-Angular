@@ -1,0 +1,8 @@
+th {
+  font-weight: bold;
+  background-color: lightgreen;
+}
+
+td, th {
+  border: 2px solid black;
+}
