@@ -1,5 +1,5 @@
 var app = angular
-        .module("myApp", [])
+        .module("tableApp", [])
         .controller('personenCtrl', function($scope, $http) {
           $http.get("selectTable.php").then(function (response) {
             $scope.personen = response.data.records;
