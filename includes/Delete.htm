@@ -1,0 +1,15 @@
+<div class="form-delete" id="deleteApp" ng-controller="deleteCtrl">
+  <h3>Delete</h3>
+  <p>in het onderstaande overzicht wordt het mogelijk gemaakt om records te deleten.<br>
+  vul het ID in van het record die je graag zou willen van de database</p>
+  <form method="post">
+    <label for="id"><strong>ID:</strong></label>
+    <br>
+    <input ng-model="id" type="text" pattern="[0-9]{1,10}" required>
+    <br><br>
+    <input type="submit" value="Verwijder" ng-click="deletePerson(id)">
+  </form>
+  <br>
+</div>
+
+<!-- regex wordt gedaan in huid bestand! (pattern attribuut) -->

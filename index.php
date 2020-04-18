@@ -6,9 +6,7 @@
     <link rel="stylesheet" href="./CSS/master.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-    <script src="Javascript/root.js"></script>
-    <script src="AngularTable.js" type="text/javascript"></script>
-    <script src="Javascript/AngularRouting.js" type="text/javascript"></script>
+    <script src="Angular.js" type="text/javascript"></script>
   </head>
   <body ng-app="rootApp">
     <div class="parent">
@@ -49,6 +47,8 @@
               <td>{{ persoon.Woonplaats }}</td>
               <td>{{ persoon.TelefoonNummer }}</td>
               <td>{{ persoon.Tijdtoegevoegd }}</td>
+              <td><button><a href="#!delete">verwijder</a></button></td>
+              <td><button><a href="#!update">update</a></button></td>
             </tr>
           </table>
         </div>
