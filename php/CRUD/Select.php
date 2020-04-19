@@ -1,5 +1,8 @@
 <?php
-include "./php/database/connection/connection.php";
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+//
+include "../database/connection/connection.php";
 //
 $result = $conn->query("SELECT ID, Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, TelefoonNummer, Tijdtoegevoegd FROM $table");
 $outp = "";

@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="./CSS/master.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-    <script src="Angular.js" type="text/javascript"></script>
+    <script src="Javascript/Angular.js" type="text/javascript"></script>
   </head>
   <body ng-app="rootApp">
     <div class="parent">
@@ -38,7 +39,7 @@
               <th> Tijdtoegevoegd </th>
             </tr>
             <tr ng-repeat="persoon in personen | orderBy:sortColumn:reverseSort">
-              <td>{{ persoon.ID }}</td>
+              <td><strong>{{ persoon.ID }}</strong></td>
               <td>{{ persoon.Voornaam }}</td>
               <td>{{ persoon.Achternaam }}</td>
               <td>{{ persoon.Straat }}</td>
@@ -47,8 +48,8 @@
               <td>{{ persoon.Woonplaats }}</td>
               <td>{{ persoon.TelefoonNummer }}</td>
               <td>{{ persoon.Tijdtoegevoegd }}</td>
-              <td><button><a href="#!delete">verwijder</a></button></td>
-              <td><button><a href="#!update">update</a></button></td>
+              <td><button><a href="#!delete">Delete</a></button></td>
+              <td><button><a href="#!update">Update</a></button></td>
             </tr>
           </table>
         </div>
@@ -56,9 +57,9 @@
       <div class="routing-child-x2" id="routingApp">
         <div class="routingLinks-child-x3">
           <ul>
-            <li class="link"><button type="button"><a href="#!delete">delete</a></button></li>
-            <li class="link"><button type="button"><a href="#!insert">Insert</a></button></li>
-            <li class="link"><button type="button"><a href="#!update">Update</a></button></li>
+            <li class="link"><button type="button" class="btn btn-danger" id="routing-button-1"><a class="text-white" href="#!delete">delete</a></button></li>
+            <li class="link"><button type="button" class="btn btn-success" id="routing-button-2"><a class="text-white" href="#!insert">Insert</a></button></li>
+            <li class="link"><button type="button" class="btn btn-warning" id="routing-button-3"><a class="text-white" href="#!update">Update</a></button></li>
           </ul>
         </div>
         <div class="routingOutput-child-x3">

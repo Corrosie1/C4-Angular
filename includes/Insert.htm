@@ -1,4 +1,4 @@
-<div class="form-insert" ng-app="insertApp" ng-controller="insertCtrl">
+<div class="form-insert" id="insertApp" ng-controller="insertCtrl">
   <h3>Insert</h3>
   <form method="post">
     voeg een record toe:
@@ -13,7 +13,7 @@
     <br><br>
     Straat :
     <br><br>
-    <input ng-model="straat" type="text" name="Straat" pattern="[a-zA-Z][\s-]?{1,30}" required/>
+    <input ng-model="straat" type="text" name="Straat" pattern="[a-zA-Z]{1,30}" required/>
     <br><br>
     Huisnummer :
     <br><br>
@@ -31,7 +31,9 @@
     <br><br>
     <input ng-model="telnr" type="text" name="Telefoonnummer" pattern="^(((\\+31|0|0031)6){1}[1-9]{1}[0-9]{7})$" required/>
     <br><br>
-    <input type="submit" name="submit" value="submit" ng-click="insertPerson(voornaam, achternaam, straat, huisnummer, postcode, woonplaats, telnr)">
+    <input type="submit" name="submit" value="insert record!" ng-click="insertPerson(voornaam, achternaam, straat, huisnummer, postcode, woonplaats, telnr)">
   </form>
   <br>
 </div>
+
+<!-- regex wordt gedaan in huidig bestand! (pattern attribuut) -->

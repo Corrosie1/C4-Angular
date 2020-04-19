@@ -1,1 +1,45 @@
-<p>hey.update</p>
+<div class="form-insert" id="updateApp" ng-controller="updateCtrl">
+  <h3>Update</h3>
+  <form method="post">
+    <h4> Updaten van een record! </h4>
+    <p>Om het veld te updaten moet je de gegevens invoeren die je terug wilt zien.<br>
+    wil je dus maar 1 record updaten, moet je alle gegevens hierin typen, ook al staan ze in <br>
+    de database opgeslagen</p>
+    Voornaam :
+    <br><br>
+    <input ng-model="voornaam" type="text" name="Voornaam" pattern="[a-zA-Z]{1,30}" required/>
+    <br><br>
+    Achternaam :
+    <br><br>
+    <input ng-model="achternaam" type="text" name="Achternaam" pattern="[a-zA-Z]{1,30}" required/>
+    <br><br>
+    Straat :
+    <br><br>
+    <input ng-model="straat" type="text" name="Straat" pattern="[a-zA-Z]{1,30}" required/>
+    <br><br>
+    Huisnummer :
+    <br><br>
+    <input ng-model="huisnummer" type="text" name="Huisnummer" pattern="[0-9]{1,5}" required/>
+    <br><br>
+    Postcode :
+    <br><br>
+    <input ng-model="postcode" type="text" name="Postcode" pattern="^[1-9][0-9]{3}[\s]?[A-Za-z]{2}$" required/>
+    <br><br>
+    Woonplaats :
+    <br><br>
+    <input ng-model="woonplaats" type="text" name="Woonplaats" pattern="[a-zA-Z]{1,30}" required/>
+    <br><br>
+    Mobiel telefoon Nummer :
+    <br><br>
+    <input ng-model="telnr" type="text" name="Telefoonnummer" pattern="^(((\\+31|0|0031)6){1}[1-9]{1}[0-9]{7})$" required/>
+    <br><br>
+    id :
+    <br><br>
+    <input ng-model="idUpdate" type="text" name="id" pattern="[0-9]{1,5}">
+    <br><br>
+    <input type="submit" name="submit" value="update record!" ng-click="updatePerson(voornaam, achternaam, straat, huisnummer, postcode, woonplaats, telnr, idUpdate)">
+  </form>
+  <br>
+</div>
+
+<!-- regex wordt gedaan in huidig bestand! (pattern attribuut) -->
