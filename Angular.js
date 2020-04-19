@@ -1,4 +1,4 @@
-var rootApp = angular.module('rootApp', ['tableApp', 'routingApp', "deleteApp"])
+var rootApp = angular.module('rootApp', ['tableApp', 'routingApp', "deleteApp", "insertApp"])
 
 var app = angular
         .module("tableApp", [])
@@ -65,5 +65,39 @@ var deleteApp = angular.module('deleteApp', []);
     }
   }
 });
+// deleten van een record
 
+var insertApp = angular.module('insertApp', []);
+app.controller('insertCtrl', function($scope, $http){
+  $scope.insertPerson = function(voornaam, achternaam, straat, huisnummer, postcode, woonplaats, telnr){
+    var url = 'Insert.php';
+    var data = {
+      'voornaam': voornaam.toString(),
+      'achternaam': achternaam.toString(),
+      'straat': straat.toString(),
+      'huisnummer': huisnummer.toString(),
+      'postcode': postcode.toString(),
+      'woonplaats': woonplaats.toString(),
+      'telefoonnummer': telnr.toString()
+    }
+
+    var config = {
+              headers : {
+                  'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+              }
+          }
+
+    if(confirm("Weet je zeker dat je de record toe wilt voegen?")){
+      $http.post(url, data, config)
+      .then(function(response){
+             window.alert("success!, record is toegevoegd!");
+             location.reload();
+            },
+            function(response){
+             window.alert("failure, record is niet toegevoegd");
+            }
+          );
+        }
+      }
+    })
 // verwijderd de gegevens uit de database zodra er een ID wordt meegegeven

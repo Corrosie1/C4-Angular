@@ -1,37 +1,37 @@
-<div class="form-insert">
+<div class="form-insert" ng-app="insertApp" ng-controller="insertCtrl">
   <h3>Insert</h3>
   <form method="post">
     voeg een record toe:
     <br><br>
     Voornaam :
     <br><br>
-    <input type="text" name="Voornaam" pattern="[a-zA-Z]{1,30}" required/>
+    <input ng-model="voornaam" type="text" name="Voornaam" pattern="[a-zA-Z]{1,30}" required/>
     <br><br>
     Achternaam :
     <br><br>
-    <input type="text" name="Achternaam" pattern="[a-zA-Z]{1,30}" required/>
+    <input ng-model="achternaam" type="text" name="Achternaam" pattern="[a-zA-Z]{1,30}" required/>
     <br><br>
     Straat :
     <br><br>
-    <input type="text" name="Straat" pattern="[a-zA-Z]{1,30}" required/>
+    <input ng-model="straat" type="text" name="Straat" pattern="[a-zA-Z][\s-]?{1,30}" required/>
     <br><br>
     Huisnummer :
     <br><br>
-    <input type="text" name="Huisnummer" pattern="[0-9]{1,5}" required/>
+    <input ng-model="huisnummer" type="text" name="Huisnummer" pattern="[0-9]{1,5}" required/>
     <br><br>
     Postcode :
     <br><br>
-    <input type="text" name="Postcode" pattern="[0-9]{2,4}(\s)[a-zA-Z]{1,2}" required/>
+    <input ng-model="postcode" type="text" name="Postcode" pattern="^[1-9][0-9]{3}[\s]?[A-Za-z]{2}$" required/>
     <br><br>
     Woonplaats :
     <br><br>
-    <input type="text" name="Woonplaats" pattern="[a-zA-Z]{1,30}" required/>
+    <input ng-model="woonplaats" type="text" name="Woonplaats" pattern="[a-zA-Z]{1,30}" required/>
     <br><br>
-    Telefoon Nummer :
+    Mobiel telefoon Nummer :
     <br><br>
-    <input type="text" name="Telefoonnummer" pattern="[0-9]{1,12}" required/>
+    <input ng-model="telnr" type="text" name="Telefoonnummer" pattern="^(((\\+31|0|0031)6){1}[1-9]{1}[0-9]{7})$" required/>
     <br><br>
-    <input type="submit" name="submit" value="submit">
+    <input type="submit" name="submit" value="submit" ng-click="insertPerson(voornaam, achternaam, straat, huisnummer, postcode, woonplaats, telnr)">
   </form>
   <br>
 </div>
