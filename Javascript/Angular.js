@@ -3,6 +3,14 @@ var rootApp = angular.module('rootApp', ['tableApp', 'routingApp', "deleteApp", 
 var app = angular
         .module("tableApp", [])
         .controller('personenCtrl', function($scope, $http) {
+          $scope.id = "NVT";
+          $scope.tijd = "NVT";
+          //
+          $scope.timestamp = function(id, tijd){
+            $scope.id = id
+            $scope.tijd = tijd;
+          };
+          //
           $http.get("php/CRUD/Select.php").then(function (response) {
             $scope.personen = response.data.records;
           });
@@ -136,4 +144,4 @@ app.controller('updateCtrl', function($scope, $http){
         }
       }
     })
-// updaten van een record
+// updaten van een record, dit past ook de database aan

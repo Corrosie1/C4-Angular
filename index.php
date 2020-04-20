@@ -21,6 +21,9 @@
           <p> onderin het scherm heb je meerdere links.<br>
           Door op 1 van deze links te klikken wordt wordt er gebruik gemaakt van routing. <br>
           Hiermee wordt het juiste scherm opgehaald</p>
+          <h2> Timestamp </h2>
+          <p> De timestamp van een bepaald element wordt zichtbaar <br>
+          zodra je met je muis erover heen gaat</p>
           </div>
         <div class="tabel-child-x2" id="tableApp" ng-controller="personenCtrl">
           <h2> Overzicht gegevens </h2>
@@ -36,9 +39,8 @@
               <th> Postcode </th>
               <th ng-click="sortData('Woonplaats')"> Woonplaats <div ng-class="getSortClass('Woonplaats')"></div> </th>
               <th> Telefoon nummer </th>
-              <th> Tijdtoegevoegd </th>
             </tr>
-            <tr ng-repeat="persoon in personen | orderBy:sortColumn:reverseSort">
+            <tr ng-repeat="persoon in personen | orderBy:sortColumn:reverseSort" ng-mouseenter="timestamp(persoon.ID, persoon.Tijdtoegevoegd)">
               <td><strong>{{ persoon.ID }}</strong></td>
               <td>{{ persoon.Voornaam }}</td>
               <td>{{ persoon.Achternaam }}</td>
@@ -47,11 +49,12 @@
               <td>{{ persoon.Postcode }}</td>
               <td>{{ persoon.Woonplaats }}</td>
               <td>{{ persoon.TelefoonNummer }}</td>
-              <td>{{ persoon.Tijdtoegevoegd }}</td>
               <td><button><a href="#!delete">Delete</a></button></td>
               <td><button><a href="#!update">Update</a></button></td>
             </tr>
           </table>
+          <br>
+          <p>Timestamp: <strong> {{ tijd }} </strong>, ID: <strong>{{id}}</strong></p>
         </div>
       </div>
       <div class="routing-child-x2" id="routingApp">
@@ -64,7 +67,7 @@
         </div>
         <div class="routingOutput-child-x3">
           <div ng-view>
-            <!-- content from the different .php files will be shown here -->
+            <!-- content van de .htm files wordt hier weergegeven - zie de includes map. -->
           </div>
         </div>
       </div>
